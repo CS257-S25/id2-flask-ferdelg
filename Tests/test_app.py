@@ -9,7 +9,7 @@ import unittest
 import app
 
 class TestHomepage(unittest.TestCase):
-    """Test the homepage route to ensure it contains the correct content."""
+    """Test the homepage route to ensure it has the correct content."""
 
     def test_homepage(self):
         """Check if the homepage function returns the correct content."""
@@ -45,7 +45,7 @@ class TestFilterFunctions(unittest.TestCase):
     def test_actor_filter_mixedcase(self):
         """Check if filtering with all fields in mixedcase includes only correct titles."""
         self.assertEqual(
-            app.search_by_actor("bReNdan%20gleEsOn"),
+            app.search_by_actor("bReNdan%20GleEsOn"),
             "The Grand Seduction"
         )
 
@@ -56,9 +56,9 @@ class TestFilterFunctions(unittest.TestCase):
             "The Grand Seduction"
         )
 
-    def test_nonexistent_actor(self):
+    def test_nonexistents_actor(self):
         """Check if filtering by a nonexistent actor results in an empty string."""
-        self.assertEqual(app.search_with_filters("John-Yu", "-", "-"), "")
+        self.assertEqual(app.search_with_filters("Maria-del-granado", "-", "-"), "")
 
 
 
