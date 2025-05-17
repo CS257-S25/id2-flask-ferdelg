@@ -60,7 +60,7 @@ class TestFilterFunctions(unittest.TestCase):
     def test_nonexistents_actor(self):
         """Check if filtering by a nonexistent actor results in an empty string."""
         self.assertEqual(
-            app.search_by_actor("Maria-del-granado"), 
+            app.search_by_actor("Maria-del-granado"),
             ""
         )
 
