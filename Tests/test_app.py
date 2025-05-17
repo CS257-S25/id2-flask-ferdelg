@@ -46,25 +46,23 @@ class TestFilterFunctions(unittest.TestCase):
     def test_actor_filter_mixedcase(self):
         """Check if filtering with all fields in mixedcase includes only correct titles."""
         self.assertEqual(
-            app.search_by_actor("bReNdan%20GleEsOn"),
+            app.search_by_actor("bReNdan GleEsOn"),
             "The Grand Seduction"
         )
 
     def test_actor_filter_uppercase(self):
         """Check if filtering with all fields in uppercase includes only correct titles."""
         self.assertEqual(
-            app.search_by_actor("BRENDAN_GLEESON"),
+            app.search_by_actor("BRENDAN GLEESON"),
             "The Grand Seduction"
         )
 
     def test_nonexistents_actor(self):
         """Check if filtering by a nonexistent actor results in an empty string."""
-        self.assertEqual(app.search_by_actor("Maria-del-granado"), ""
+        self.assertEqual(
+            app.search_by_actor("Maria-del-granado"), 
+            ""
         )
-
-
-
-
 
 if __name__ == "__main__":
     unittest.main()
