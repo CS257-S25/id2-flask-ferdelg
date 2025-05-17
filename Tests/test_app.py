@@ -39,7 +39,7 @@ class TestFilterFunctions(unittest.TestCase):
     def test_actor_filter_lowercase(self):
         """Check if filtering with all fields in lowercase includes only correct titles."""
         self.assertEqual(
-            app.search_by_actor("brendan-gleeson"),
+            app.search_by_actor("brendan gleeson"),
             "The Grand Seduction"
         )
 
