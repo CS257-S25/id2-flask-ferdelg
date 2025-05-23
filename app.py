@@ -33,7 +33,13 @@ def homepage():
 @app.route('/actor/<name>', strict_slashes=False)
 def search_by_actor(name):
     """
-    Route that returns movie title of a specific actor.
+    Returns movie titles that feature the specified actor.
+
+    Parameter:
+        name (str): The name of the actor searched for.
+
+    Returns:
+        str: A string listing matching movie titles.
     """
     results = filtering.filter_by_actor(name)
     return make_list_web_displayable(results.get_titles_list())
